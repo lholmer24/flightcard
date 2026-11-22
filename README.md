@@ -118,7 +118,7 @@ board over USB after flashing (see below).
 | `FC_HOME_LON` | Monitoring longitude in decimal degrees, −180 to 180. |
 | `FC_TIMEZONE` | `UTC`, `GMT`, `Europe/London`, `Europe/Dublin`, `Europe/Lisbon`, or a fixed offset such as `UTC+01:00`. Default `UTC`. |
 | `FC_RADIUS_KM` | Initial search radius, 0.1–500. Default `12`. |
-| `FC_MAX_ALT_FT` | Initial altitude ceiling in feet, 0–60000. Default `6000`. |
+| `FC_MAX_ALT_FT` | Initial altitude ceiling in feet, 0–60000. Default `8000`. |
 
 Set `FC_HOME_LAT` and `FC_HOME_LON` together, or leave both unset. Values are
 copied into `build/generated/fc_build_config.h` at configure time. Use them
@@ -188,7 +188,7 @@ help
 set wifi <ssid> <password>
 set home <latitude> <longitude>
 set radius 12
-set ceiling 6000
+set ceiling 8000
 set poll 10
 set tz UTC
 set palette auto

@@ -45,7 +45,7 @@ set(FC_HOME_LAT "" CACHE STRING "Optional monitoring latitude in decimal degrees
 set(FC_HOME_LON "" CACHE STRING "Optional monitoring longitude in decimal degrees")
 set(FC_TIMEZONE "" CACHE STRING "Optional display timezone (UTC, Europe/London or UTC+HH:MM)")
 set(FC_RADIUS_KM "" CACHE STRING "Optional initial search radius in km (default 12)")
-set(FC_MAX_ALT_FT "" CACHE STRING "Optional initial altitude ceiling in feet (default 6000)")
+set(FC_MAX_ALT_FT "" CACHE STRING "Optional initial altitude ceiling in feet (default 8000)")
 
 if (FC_WIFI_SSID STREQUAL "" AND DEFINED ENV{FC_WIFI_SSID})
     set(FC_WIFI_SSID "$ENV{FC_WIFI_SSID}")
@@ -111,7 +111,7 @@ else()
 endif()
 
 if (FC_MAX_ALT_FT STREQUAL "")
-    set(FC_MAX_ALT_FT_C "6000.0f")
+    set(FC_MAX_ALT_FT_C "8000.0f")
 elseif (NOT FC_MAX_ALT_FT MATCHES "^[0-9]+([.][0-9]+)?$"
         OR FC_MAX_ALT_FT LESS 0.0 OR FC_MAX_ALT_FT GREATER 60000.0)
     message(FATAL_ERROR "FC_MAX_ALT_FT must be a number from 0 to 60000")

@@ -124,7 +124,7 @@ static void test_ranking(void)
     CHECK(!fc_rank_one(&ac, &cfg, &out));
     snprintf(ac.type, sizeof(ac.type), "A388");
 
-    ac.alt_ft = 7000.0f;
+    ac.alt_ft = 9000.0f;
     CHECK(!fc_rank_one(&ac, &cfg, &out));
     ac.alt_ft = 3550.0f;
 

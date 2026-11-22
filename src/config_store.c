@@ -28,7 +28,7 @@
 #define FC_BUILD_HOME_LON 0.0f
 #define FC_BUILD_TIMEZONE "UTC"
 #define FC_BUILD_RADIUS_KM 12.0f
-#define FC_BUILD_MAX_ALT_FT 6000.0f
+#define FC_BUILD_MAX_ALT_FT 8000.0f
 #endif
 
 #ifndef FC_HOST_TEST

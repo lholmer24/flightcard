@@ -18,6 +18,7 @@
 
 #ifndef FC_HOST_TEST
 #include "clock.h"
+#include "display.h"
 #include "hardware/watchdog.h"
 #include "net.h"
 #include "pico/async_context_freertos.h"
@@ -91,6 +92,7 @@ static void show_help(char *out, size_t cap)
            "  help\n"
            "  show                   (also net/clock state)\n"
            "  tasks                  (task states / async lock holder)\n"
+           "  test display           (colour bars; hardware check)\n"
            "  set wifi <ssid> <password>\n"
            "  set ssid <ssid with spaces>\n"
            "  set password <password with spaces>\n"
@@ -157,6 +159,17 @@ cli_action_t cli_execute(config_t *cfg, const char *line,
                    (unsigned)status[i].usStackHighWaterMark);
 #endif
         }
+        return CLI_ACTION_NONE;
+    }
+    if (strcasecmp(cmd, "test") == 0) {
+        char *what = strtok(NULL, " \t");
+        if (what != NULL && strcasecmp(what, "display") == 0) {
+            append(out, cap, "display test: red green blue white black...\n");
+            for (int i = 0; i < 4; i++) display_test_pattern();
+            append(out, cap, "display test done\n");
+            return CLI_ACTION_NONE;
+        }
+        append(out, cap, "usage: test display\n");
         return CLI_ACTION_NONE;
     }
 #endif

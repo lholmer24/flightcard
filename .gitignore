@@ -1,0 +1,36 @@
+# Build output. This directory contains plain-text credentials and location
+# when build-time defaults are used, plus generated source and UF2 images.
+build/
+build-*/
+CMakeCache.txt
+compile_commands.json
+
+# Generated assets (recreated by tools/convert_assets.py)
+assets/generated/
+
+# Host test binary
+tests/test
+
+# Firmware and object output
+*.uf2
+*.elf
+*.bin.tmp
+*.o
+*.d
+*.map
+*.dis
+*.hex
+
+# Secrets that should never be committed
+.env
+*.env
+secrets.cmake
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*~
